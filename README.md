@@ -15,16 +15,20 @@ also included.
 
 ## ⚠️ What is *not* in this repository
 
-This repo holds **code and references only**. It contains **no data and no
-sensitive material**:
+This repo holds **code, references, and literature-derived aggregate tables
+only**. It contains **no patient-level or sensitive material**:
 
 - no patient-level or cohort data (age, sex, nationality, IDs, MIC values, …),
-- no extracted meta-analysis spreadsheets,
 - no sequencing data or QIIME artifacts,
 - no manuscripts, reviewer correspondence, or copyrighted PDFs.
 
-Datasets live outside version control (see [`data/README.md`](data/README.md)).
-`.gitignore` is configured to block the common data/manuscript file types.
+It **does** include, under `data/meta/`, the regional meta-analysis inputs —
+study-level counts transcribed from published papers (no individuals) — so the
+forest plots and the meta-analysis report run from a clean checkout.
+
+Patient-level datasets live outside version control (see
+[`data/README.md`](data/README.md)); `.gitignore` blocks the common
+data/manuscript file types everywhere except `data/meta/` and `data/templates/`.
 
 ---
 
@@ -46,7 +50,12 @@ pylory_kz/
 │   └── microbiome/
 │       └── alpha_diversity.R      QIIME 2 commands + R plotting of Shannon index
 ├── data/
-│   ├── README.md                 How to obtain / place the datasets
+│   ├── README.md                 How to obtain / place the patient datasets
+│   ├── meta/                     Meta-analysis inputs — tracked (aggregate, no individuals)
+│   │   ├── CentralAsia_Hpylori_Prevalence.csv
+│   │   ├── CentralAsia_Hpylori_Resistance.csv
+│   │   └── README.md             Row-by-row provenance + data-quality notes
+│   ├── raw/ , processed/         Patient-level data — git-ignored, never committed
 │   └── templates/                Header-only CSV templates (no records)
 ├── results/
 │   ├── figures/                  Generated figures (git-ignored)
@@ -66,19 +75,17 @@ pylory_kz/
 ## Quick start
 
 ```bash
-# 1. Put the datasets in place (they are NOT in the repo)
-#    see data/README.md for the expected filenames and columns
+# --- Meta-analysis: runs now, data is already in the repo ---------------------
+Rscript analysis/R/05_figures_forest_plots.R                     # Figure 1 & 2
+Rscript -e 'rmarkdown::render("analysis/rmd/centralasia_meta_analysis.Rmd")'
 
-# 2. From an R session at the repo root:
+# --- Cohort analysis: needs the patient dataset (NOT in the repo) -------------
+#     see data/README.md for the expected file and columns
 Rscript analysis/R/00_clean_data.R
 Rscript analysis/R/01_table1_study_flow.R
 Rscript analysis/R/02_table2_epidemiology.R
 Rscript analysis/R/03_table3_resistance.R
 Rscript analysis/R/04_supp_ras_vs_culture.R
-Rscript analysis/R/05_figures_forest_plots.R
-
-# 3. Meta-analysis report
-Rscript -e 'rmarkdown::render("analysis/rmd/centralasia_meta_analysis.Rmd")'
 ```
 
 All scripts resolve paths relative to the repo root (via the `here` package),

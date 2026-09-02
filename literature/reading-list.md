@@ -86,4 +86,5 @@ publisher before they are cited. No PDFs are stored in this repository.
 - Add new items to `references.bib` first, then link them here.
 - Resolve every *(to complete)* before manuscript submission.
 - Keep §3 aligned with the studies actually entered into
-  `data/raw/CentralAsia_Hpylori_*.csv` for the meta-analysis.
+  `data/meta/CentralAsia_Hpylori_*.csv` for the meta-analysis, and resolve the
+  *to verify* citation markers in `data/meta/README.md`.

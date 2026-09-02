@@ -1,12 +1,14 @@
 # ---------------------------------------------------------------------------
 # Data & sensitive material — NEVER commit
 # ---------------------------------------------------------------------------
-# Patient-level / cohort data, extracted datasets, sequencing outputs
+# Patient-level / cohort data, sequencing outputs
 data/raw/*
 data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
+# Tracked on purpose: header-only templates + aggregate meta-analysis inputs
 !data/templates/**
+!data/meta/**
 
 *.xlsx
 *.xls

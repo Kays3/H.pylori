@@ -1,0 +1,5 @@
+Country,Author_Year,N_Isolates,Clarithromycin_Res_%,Metronidazole_Res_%,Amoxicillin_Res_%,Mutation_Info
+Kazakhstan,Kulmambetova et al. (2015),20,65,31.3,18.8,23S rRNA A2143G
+Russia,Lazebnik et al. (2012),74,14.5,45,,
+Uzbekistan,Karimov et al. (2019),30,13.3,,,A2142G/C
+Kazakhstan,Current study (2025),86,33.7,87.2,3,N/A

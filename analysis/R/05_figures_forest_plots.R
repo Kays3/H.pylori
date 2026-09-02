@@ -5,9 +5,9 @@
 # Author: K. Dauyey
 # Pipeline step 5 of 5.  Run from the repository root.
 #
-# INPUT : data/raw/CentralAsia_Hpylori_Prevalence.csv
-#         data/raw/CentralAsia_Hpylori_Resistance.csv
-#         (manual extraction from published studies; schema in data/README.md)
+# INPUT : data/meta/CentralAsia_Hpylori_Prevalence.csv   (tracked in-repo)
+#         data/meta/CentralAsia_Hpylori_Resistance.csv   (tracked in-repo)
+#         (aggregate figures from published studies; provenance in data/meta/README.md)
 # OUTPUT: results/figures/Figure1_ForestPlot_Hpylori_Prevalence.pdf
 #         results/figures/Figure2_ForestPlot_Clarithromycin_Resistance.pdf
 #
@@ -22,10 +22,10 @@ library(here)
 library(readr)
 library(meta)
 
-prev_path <- here("data", "raw", "CentralAsia_Hpylori_Prevalence.csv")
-res_path  <- here("data", "raw", "CentralAsia_Hpylori_Resistance.csv")
+prev_path <- here("data", "meta", "CentralAsia_Hpylori_Prevalence.csv")
+res_path  <- here("data", "meta", "CentralAsia_Hpylori_Resistance.csv")
 for (p in c(prev_path, res_path)) {
-  if (!file.exists(p)) stop("Missing input: ", p, "\nSee data/README.md.")
+  if (!file.exists(p)) stop("Missing input: ", p, "\nSee data/meta/README.md.")
 }
 
 prevalence <- read_csv(prev_path, show_col_types = FALSE)

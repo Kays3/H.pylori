@@ -1,0 +1,14 @@
+Country,Author_Year,N,Positive,Diagnostic_Method,Prevalence_%
+Kazakhstan,Current study (2025),150,86,Culture,57.3
+Kazakhstan,Seisenbekova et al. (2025),369,109,UBT,29.5
+Kazakhstan,Mezmale et al. (2021),166,104,PCR,62.7
+Kazakhstan,Abylkasymova (2012),52,43,PCR,91.7
+Kazakhstan,Aldiyarova M (2011),446,257,UBT,57.6
+Kazakhstan,Kulmagambetova (2011),19,16,PCR,84.2
+Kazakhstan,Zhangabylov et al. (2002),288,230,ELISA,80
+Kazakhstan,Nurgalieva et al. (2001),103,76,ELISA,85.4
+Uzbekistan,Abdiev et al. (2010),167,125,PCR,74.9
+Uzbekistan,Abdiev et al. (2008),95,69,PCR,72.6
+Kyrgyzstan,Dzhumabaev et al. (2015),116,55,ELISA,47.4
+Kyrgyzstan,Dzhumabaev M (2008),359,340,Histology,87.4
+Kyrgyzstan,Akbarova et al. (2017),116,96,UBT,82.7

@@ -15,14 +15,14 @@ library(dplyr)
 
 ## Inputs
 
-Aggregate data manually extracted from published Central Asian studies. Files
-are **not** stored in the repository — place them under `data/raw/` first
-(schema in `data/README.md`).
+Aggregate figures transcribed from published Central Asian studies. These files
+**are** tracked in the repository under `data/meta/` (no patient data);
+provenance and known data-quality items are in `data/meta/README.md`.
 
 ```{r load}
-prevalence <- read_csv(here("data", "raw", "CentralAsia_Hpylori_Prevalence.csv"),
+prevalence <- read_csv(here("data", "meta", "CentralAsia_Hpylori_Prevalence.csv"),
                        show_col_types = FALSE)
-resistance <- read_csv(here("data", "raw", "CentralAsia_Hpylori_Resistance.csv"),
+resistance <- read_csv(here("data", "meta", "CentralAsia_Hpylori_Resistance.csv"),
                        show_col_types = FALSE)
 ```
 

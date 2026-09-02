@@ -38,9 +38,11 @@ Derived by `00_clean_data.R`: `AmxRes`, `ClaRes`, `MinRes`, `SitaRes`,
 **Identifiers / quasi-identifiers** (`ID`, `Nationality`, exact `Age` with
 small strata) must stay out of version control.
 
-## 2. `CentralAsia_Hpylori_Prevalence.csv`
+## 2. `data/meta/CentralAsia_Hpylori_Prevalence.csv`  *(tracked in-repo)*
 
-Manual extraction from published prevalence studies (Central Asia + neighbours).
+Study-level figures transcribed from published prevalence studies (Central Asia
++ neighbours). Row-by-row provenance and known `Positive` vs `Prevalence_%`
+discrepancies: [`../data/meta/README.md`](../data/meta/README.md).
 
 | Column | Type | Notes |
 |--------|------|-------|
@@ -51,9 +53,9 @@ Manual extraction from published prevalence studies (Central Asia + neighbours).
 | `Diagnostic_Method` | chr | `Serology/IgG`, `UBT`, `PCR`, `Culture`, `Histology`, … |
 | `Prevalence_%` | num | `Positive / N * 100` (redundant, for checking) |
 
-## 3. `CentralAsia_Hpylori_Resistance.csv`
+## 3. `data/meta/CentralAsia_Hpylori_Resistance.csv`  *(tracked in-repo)*
 
-Manual extraction from published resistance studies.
+Study-level figures transcribed from published resistance studies.
 
 | Column | Type | Notes |
 |--------|------|-------|

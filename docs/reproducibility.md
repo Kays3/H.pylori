@@ -36,8 +36,8 @@ Rscript analysis/R/00_clean_data.R
 | 2 | `analysis/R/02_table2_epidemiology.R` | step 0 output | `results/tables/Table2_Hpylori_Epidemiology.html` |
 | 3 | `analysis/R/03_table3_resistance.R` | step 0 output | `results/tables/Table3_Resistance_*.html` |
 | 4 | `analysis/R/04_supp_ras_vs_culture.R` | step 0 output | Supp table + ROC figure |
-| 5 | `analysis/R/05_figures_forest_plots.R` | `data/raw/CentralAsia_Hpylori_*.csv` | Figure 1 + Figure 2 PDFs |
-| — | `analysis/rmd/centralasia_meta_analysis.Rmd` | `data/raw/CentralAsia_Hpylori_*.csv` | HTML report |
+| 5 | `analysis/R/05_figures_forest_plots.R` | `data/meta/CentralAsia_Hpylori_*.csv` *(in repo)* | Figure 1 + Figure 2 PDFs |
+| — | `analysis/rmd/centralasia_meta_analysis.Rmd` | `data/meta/CentralAsia_Hpylori_*.csv` *(in repo)* | HTML report |
 | — | `analysis/microbiome/alpha_diversity.R` | `data/raw/alpha-diversity.tsv`, `microbiome_metadata.tsv` | Shannon figure |
 
 One-shot:
