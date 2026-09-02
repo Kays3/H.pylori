@@ -41,8 +41,9 @@ counts from the analytic table so the numbers track the current dataset.
 | Table 2 — epidemiology by culture | `analysis/R/02_table2_epidemiology.R` |
 | Table 3 — resistance (single/dual/triple, MDR) | `analysis/R/03_table3_resistance.R` |
 | Supplementary — RAS vs culture, ROC | `analysis/R/04_supp_ras_vs_culture.R` |
-| Figure 1 — regional prevalence forest plot | `analysis/R/05_figures_forest_plots.R` |
-| Figure 2 — clarithromycin resistance forest plot | `analysis/R/05_figures_forest_plots.R` |
+| Figure 1 — regional prevalence forest plot | `analysis/R/05_figures_forest_plots.R` → `results/meta-analysis/` |
+| Figure 2 — clarithromycin resistance forest plot | `analysis/R/05_figures_forest_plots.R` → `results/meta-analysis/` |
+| Meta-analysis summary + per-study tables | `analysis/R/05_figures_forest_plots.R` → `results/meta-analysis/*.csv` |
 | Regional meta-analysis report | `analysis/rmd/centralasia_meta_analysis.Rmd` |
 | Microbiome alpha diversity | `analysis/microbiome/alpha_diversity.R` |
 

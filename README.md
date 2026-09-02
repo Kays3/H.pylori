@@ -45,6 +45,7 @@ pylory_kz/
 │   │   ├── 03_table3_resistance.R    Single / dual / triple resistance & MDR
 │   │   ├── 04_supp_ras_vs_culture.R  RAS vs culture performance + ROC
 │   │   └── 05_figures_forest_plots.R Forest plots (Fig 1 prevalence, Fig 2 CLR)
+│   │   └── 05_figures_forest_plots.R  also writes summary + per-study tables
 │   ├── rmd/
 │   │   └── centralasia_meta_analysis.Rmd   Full regional meta-analysis report
 │   └── microbiome/
@@ -58,8 +59,9 @@ pylory_kz/
 │   ├── raw/ , processed/         Patient-level data — git-ignored, never committed
 │   └── templates/                Header-only CSV templates (no records)
 ├── results/
-│   ├── figures/                  Generated figures (git-ignored)
-│   └── tables/                   Generated tables (git-ignored)
+│   ├── meta-analysis/            Committed forest plots + summary/per-study tables (reproducible from data/meta/)
+│   ├── figures/                  Cohort-analysis figures (git-ignored — depend on patient data)
+│   └── tables/                   Cohort-analysis tables (git-ignored)
 ├── literature/
 │   ├── references.bib            BibTeX for cited + background works
 │   └── reading-list.md           Annotated, categorised reading list w/ DOIs
@@ -75,8 +77,9 @@ pylory_kz/
 ## Quick start
 
 ```bash
-# --- Meta-analysis: runs now, data is already in the repo ---------------------
-Rscript analysis/R/05_figures_forest_plots.R                     # Figure 1 & 2
+# --- Meta-analysis: runs now, data is already in the repo --------------------
+# Figures + tables land in results/meta-analysis/ (also committed for reference)
+Rscript analysis/R/05_figures_forest_plots.R
 Rscript -e 'rmarkdown::render("analysis/rmd/centralasia_meta_analysis.Rmd")'
 
 # --- Cohort analysis: needs the patient dataset (NOT in the repo) -------------

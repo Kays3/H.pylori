@@ -1,0 +1,5 @@
+Country,Author_Year,N_Isolates,Clarithromycin_Res_.,Prop,CI_low,CI_high,Weight_random_pct
+Kazakhstan,Kulmambetova et al. (2015),20,65,0.65,0.4254,0.8467,22.7
+Russia,Lazebnik et al. (2012),74,14.5,0.1486,0.0755,0.2398,26.4
+Uzbekistan,Karimov et al. (2019),30,13.3,0.1333,0.0309,0.2823,24.2
+Kazakhstan,Current study (2025),86,33.7,0.3372,0.2406,0.441,26.6

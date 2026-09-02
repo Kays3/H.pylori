@@ -1,0 +1,4 @@
+Outcome,k,Pooled_prop,CI_low,CI_high,PI_low,PI_high,I2_pct,tau2,Q,df,p_Q
+Clarithromycin resistance,4,0.2929,0.1028,0.5281,0,0.7846,90.8,0.0511,23.19,3,3.69e-05
+Metronidazole resistance,3,0.5637,0.2112,0.8842,0.0094,1,95.4,0.0963,46.13,2,9.63e-11
+Amoxicillin resistance,2,0.0898,0,0.3096,0,0.4796,80.7,0.0314,5.17,1,2.30e-02

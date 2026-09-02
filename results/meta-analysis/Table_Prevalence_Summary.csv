@@ -1,0 +1,7 @@
+Outcome,k,Pooled_prop,CI_low,CI_high,PI_low,PI_high,I2_pct,tau2,Q,df,p_Q
+Prevalence (overall),13,0.7008,0.5949,0.797,0.3079,0.9721,96.5,0.0384,521.46,12,5.98e-104
+Prevalence [Culture],1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Prevalence [ELISA],3,0.6785,0.4756,0.8517,0.2844,0.963,94.9,0.0312,39.59,2,2.53e-09
+Prevalence [Histology],1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Prevalence [PCR],5,0.7386,0.6625,0.8084,0.5812,0.8706,65.7,0.0052,11.65,4,2.02e-02
+Prevalence [UBT],3,0.5716,0.2624,0.8528,0.0476,0.9954,98.9,0.0778,133.93,2,8.26e-30

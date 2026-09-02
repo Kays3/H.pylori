@@ -36,7 +36,7 @@ Rscript analysis/R/00_clean_data.R
 | 2 | `analysis/R/02_table2_epidemiology.R` | step 0 output | `results/tables/Table2_Hpylori_Epidemiology.html` |
 | 3 | `analysis/R/03_table3_resistance.R` | step 0 output | `results/tables/Table3_Resistance_*.html` |
 | 4 | `analysis/R/04_supp_ras_vs_culture.R` | step 0 output | Supp table + ROC figure |
-| 5 | `analysis/R/05_figures_forest_plots.R` | `data/meta/CentralAsia_Hpylori_*.csv` *(in repo)* | Figure 1 + Figure 2 PDFs |
+| 5 | `analysis/R/05_figures_forest_plots.R` | `data/meta/CentralAsia_Hpylori_*.csv` *(in repo)* | `results/meta-analysis/`: Figure 1 + 2 PDFs, summary + per-study CSVs *(committed)* |
 | — | `analysis/rmd/centralasia_meta_analysis.Rmd` | `data/meta/CentralAsia_Hpylori_*.csv` *(in repo)* | HTML report |
 | — | `analysis/microbiome/alpha_diversity.R` | `data/raw/alpha-diversity.tsv`, `microbiome_metadata.tsv` | Shannon figure |
 
@@ -52,7 +52,11 @@ Rscript -e 'rmarkdown::render("analysis/rmd/centralasia_meta_analysis.Rmd")'
 - No RNG is used in the table/figure scripts.
 - `metaprop()` uses the Freeman–Tukey transform (`sm = "PFT"`), random effects,
   inverse-variance weighting — deterministic given the input CSV.
-- `results/` is git-ignored; regenerate rather than commit outputs.
+- `results/figures/` and `results/tables/` are git-ignored (they depend on
+  non-committed patient data) — regenerate rather than commit.
+- `results/meta-analysis/` **is** committed: it is fully reproducible from
+  `data/meta/`, so the checked-in copy doubles as a reference to diff against
+  after any change to the data or the script.
 
 ## Tables → manuscript
 

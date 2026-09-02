@@ -1,0 +1,14 @@
+Country,Author_Year,Diagnostic_Method,N,Positive,Prop,CI_low,CI_high,Weight_random_pct
+Kazakhstan,Current study (2025),Culture,150,86,0.5733,0.4932,0.6516,7.8
+Kazakhstan,Seisenbekova et al. (2025),UBT,369,109,0.2954,0.2499,0.343,8
+Kazakhstan,Mezmale et al. (2021),PCR,166,104,0.6265,0.5514,0.6987,7.9
+Kazakhstan,Abylkasymova (2012),PCR,52,43,0.8269,0.7106,0.9193,7.3
+Kazakhstan,Aldiyarova M (2011),UBT,446,257,0.5762,0.53,0.6218,8.1
+Kazakhstan,Kulmagambetova (2011),PCR,19,16,0.8421,0.638,0.9774,6.1
+Kazakhstan,Zhangabylov et al. (2002),ELISA,288,230,0.7986,0.7502,0.843,8
+Kazakhstan,Nurgalieva et al. (2001),ELISA,103,76,0.7379,0.6482,0.8187,7.7
+Uzbekistan,Abdiev et al. (2010),PCR,167,125,0.7485,0.6797,0.8116,7.9
+Uzbekistan,Abdiev et al. (2008),PCR,95,69,0.7263,0.6318,0.8118,7.7
+Kyrgyzstan,Dzhumabaev et al. (2015),ELISA,116,55,0.4741,0.3836,0.5655,7.7
+Kyrgyzstan,Dzhumabaev M (2008),Histology,359,340,0.9471,0.9213,0.9681,8
+Kyrgyzstan,Akbarova et al. (2017),UBT,116,96,0.8276,0.753,0.8914,7.7
