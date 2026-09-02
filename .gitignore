@@ -1,0 +1,60 @@
+# ---------------------------------------------------------------------------
+# Data & sensitive material — NEVER commit
+# ---------------------------------------------------------------------------
+# Patient-level / cohort data, extracted datasets, sequencing outputs
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/templates/**
+
+*.xlsx
+*.xls
+*.sav
+*.dta
+*.rds
+*.RData
+*.feather
+*.parquet
+
+# Bibliography source PDFs / manuscripts / correspondence
+*.pdf
+*.docx
+*.doc
+*.rtf
+*.pptx
+
+# Allow the curated, record-free templates back in
+!data/templates/*.csv
+
+# ---------------------------------------------------------------------------
+# Generated results (regenerate from analysis/) — keep folders, drop content
+# ---------------------------------------------------------------------------
+results/figures/*
+results/tables/*
+!results/figures/.gitkeep
+!results/tables/.gitkeep
+*.tiff
+*.svg
+
+# ---------------------------------------------------------------------------
+# R / RStudio
+# ---------------------------------------------------------------------------
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+.Rproj.user/
+*.Rproj
+renv/library/
+renv/local/
+renv/staging/
+
+# ---------------------------------------------------------------------------
+# OS / editor
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+*~
+.idea/
+.vscode/

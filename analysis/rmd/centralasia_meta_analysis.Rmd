@@ -1,0 +1,113 @@
+---
+title: "Meta-analysis of *H. pylori* prevalence and antibiotic resistance in Central Asia"
+author: "K. Dauyey"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+library(here)
+library(meta)
+library(metafor)
+library(readr)
+library(dplyr)
+```
+
+## Inputs
+
+Aggregate data manually extracted from published Central Asian studies. Files
+are **not** stored in the repository — place them under `data/raw/` first
+(schema in `data/README.md`).
+
+```{r load}
+prevalence <- read_csv(here("data", "raw", "CentralAsia_Hpylori_Prevalence.csv"),
+                       show_col_types = FALSE)
+resistance <- read_csv(here("data", "raw", "CentralAsia_Hpylori_Resistance.csv"),
+                       show_col_types = FALSE)
+```
+
+## Prevalence of *H. pylori*
+
+Freeman–Tukey double-arcsine transform, random-effects model. Given the mix of
+diagnostic methods (serology, UBT, PCR, culture, histology), heterogeneity is
+expected to be high; pooled estimates are read as broad regional indicators.
+
+```{r prevalence}
+meta_prev <- metaprop(
+  event   = Positive,
+  n       = N,
+  data    = prevalence,
+  studlab = paste0(Author_Year, " [", Country, " - ", Diagnostic_Method, "]"),
+  sm      = "PFT",
+  method  = "Inverse",
+  random  = TRUE
+)
+summary(meta_prev)
+forest(meta_prev, xlab = "H. pylori prevalence (%)", col.diamond = "blue",
+       print.I2 = TRUE)
+```
+
+### Sensitivity: excluding serology-based studies
+
+```{r prevalence-sensitivity}
+prev_no_sero <- prevalence %>%
+  filter(!grepl("serolog|ELISA|IgG", Diagnostic_Method, ignore.case = TRUE))
+
+if (nrow(prev_no_sero) >= 2) {
+  meta_prev_ns <- metaprop(event = Positive, n = N, data = prev_no_sero,
+                           studlab = prev_no_sero$Author_Year,
+                           sm = "PFT", method = "Inverse", random = TRUE)
+  summary(meta_prev_ns)
+} else {
+  message("Not enough non-serology studies for a sensitivity analysis.")
+}
+```
+
+## Clarithromycin resistance
+
+```{r clarithromycin}
+meta_cla <- metaprop(
+  event   = round(`Clarithromycin_Res_%` * N_Isolates / 100),
+  n       = N_Isolates,
+  data    = resistance,
+  studlab = Author_Year,
+  sm      = "PFT",
+  random  = TRUE
+)
+summary(meta_cla)
+forest(meta_cla, xlab = "Clarithromycin resistance (%)", col.diamond = "firebrick")
+```
+
+## Metronidazole resistance
+
+```{r metronidazole}
+res_mtz <- resistance %>% filter(!is.na(`Metronidazole_Res_%`))
+if (nrow(res_mtz) >= 2) {
+  meta_mtz <- metaprop(
+    event = round(`Metronidazole_Res_%` * N_Isolates / 100),
+    n = N_Isolates, data = res_mtz, studlab = res_mtz$Author_Year,
+    sm = "PFT", random = TRUE)
+  summary(meta_mtz)
+  forest(meta_mtz, xlab = "Metronidazole resistance (%)", col.diamond = "orange")
+}
+```
+
+## Amoxicillin resistance
+
+```{r amoxicillin}
+res_amx <- resistance %>% filter(!is.na(`Amoxicillin_Res_%`))
+if (nrow(res_amx) >= 2) {
+  meta_amx <- metaprop(
+    event = round(`Amoxicillin_Res_%` * N_Isolates / 100),
+    n = N_Isolates, data = res_amx, studlab = res_amx$Author_Year,
+    sm = "PFT", random = TRUE)
+  summary(meta_amx)
+  forest(meta_amx, xlab = "Amoxicillin resistance (%)", col.diamond = "forestgreen")
+}
+```
+
+## Session info
+
+```{r session}
+sessionInfo()
+```
