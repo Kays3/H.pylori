@@ -26,9 +26,13 @@ df <- read_csv(here("data", "processed", "kazakhstan_cohort_clean.csv"),
     Sex        = factor(Sex),
     RAS_result = factor(RAS_result, levels = c("Negative", "Positive")),
     Culture    = factor(Culture,    levels = c("Negative", "Positive")),
+    # Order to match the manuscript. Both "No pathology" and the "No patology"
+    # spelling present in some dataset versions are listed; fct_relevel ignores
+    # levels that are absent.
     Endoscopy  = fct_relevel(
       factor(Endoscopy),
-      "No pathology", "Non-atrophic", "C-1", "C-2", "C-3", "O-1", "O-2", "O-3",
+      "No pathology", "No patology", "Non-atrophic",
+      "C-1", "C-2", "C-3", "O-1", "O-2", "O-3",
       after = 0
     )
   )
