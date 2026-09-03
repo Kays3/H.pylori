@@ -10,6 +10,21 @@ data/processed/*
 !data/templates/**
 !data/meta/**
 
+# ---------------------------------------------------------------------------
+# Deny-by-default for tabular data, ANYWHERE in the tree.
+#
+# The rules above only protect data/raw/ and data/processed/. A cohort export
+# accidentally written to the repo root, to analysis/, or to any new directory
+# would otherwise be committed silently. Block every CSV/TSV first, then
+# re-admit the three directories that are tracked on purpose.
+# ---------------------------------------------------------------------------
+*.csv
+*.tsv
+*.txt.gz
+!data/meta/*.csv
+!data/templates/*.csv
+!results/meta-analysis/*.csv
+
 *.xlsx
 *.xls
 *.sav

@@ -1,0 +1,32 @@
+# The pre-commit hooks only protect people who installed them. This runs the
+# same checks on every push and pull request, so a missing local install
+# cannot put participant data into the default branch.
+name: privacy-guard
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run pre-commit hooks
+        uses: pre-commit/action@v3.0.1
+
+      - name: Scan full history for secrets
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

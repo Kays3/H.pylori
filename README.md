@@ -1,9 +1,13 @@
 # *Helicobacter pylori* in Kazakhstan — analysis code & literature
 
-Reproducible analysis code and a curated literature base for the study:
+Reproducible analysis code and a curated literature base for the published study:
 
-> **A single-centre culture-based study of *Helicobacter pylori* in Kazakhstan
-> with a regional meta-analysis of prevalence and antibiotic resistance.**
+> Dauyey K, Zhunussova G, Kaibullayeva J, Bondar Y, Yerzhan A, Medetbekova A,
+> Kaisina A, Khabizhanova A, Seitbekov K, Yamaoka Y.
+> **A single-center culture-based study of *Helicobacter pylori* in Kazakhstan
+> with regional meta-analysis of prevalence and antibiotic resistance.**
+> *Frontiers in Microbiology* 17 (2026).
+> doi: [10.3389/fmicb.2026.1747006](https://doi.org/10.3389/fmicb.2026.1747006)
 
 The project characterises culture-confirmed *H. pylori* prevalence and
 antibiotic-resistance patterns among dyspeptic patients in Almaty, Kazakhstan,
@@ -25,6 +29,10 @@ only**. It contains **no patient-level or sensitive material**:
 It **does** include, under `data/meta/`, the regional meta-analysis inputs —
 study-level counts transcribed from published papers (no individuals) — so the
 forest plots and the meta-analysis report run from a clean checkout.
+
+Ethical approval, consent, and how to request the underlying records are
+documented in [`docs/ethics.md`](docs/ethics.md). Contributors must read the
+handling rules there before their first commit.
 
 Patient-level datasets live outside version control (see
 [`data/README.md`](data/README.md)); `.gitignore` blocks the common
@@ -102,6 +110,29 @@ working scripts used for the manuscript (Aug 2025 – Jan 2026 revision cycle).
 Logic is unchanged; only hard-coded personal paths, scratch code, and
 data-writing side effects were removed so the pipeline runs from a clean
 checkout.
+
+## Contributing safely
+
+Install the guard hooks once per clone — they block participant data and
+credentials before a commit is created:
+
+```bash
+pip install pre-commit
+pre-commit install
+pre-commit run --all-files   # optional: check the existing tree
+```
+
+The same checks run in CI on every push and pull request
+(`.github/workflows/privacy-guard.yml`), so an uninstalled hook cannot put
+patient data on `main`.
+
+## Ethics
+
+Approved by the ethics committees of the Institute of Genetics and Physiology,
+Kazakhstan (№ 1, 8 January 2024) and Oita University Faculty of Medicine, Japan
+(P-12-10, #1660). Written informed consent was obtained from all participants.
+Full statement, including data availability:
+[`docs/ethics.md`](docs/ethics.md).
 
 ## Authorship
 
