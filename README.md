@@ -1,5 +1,9 @@
 # *Helicobacter pylori* in Kazakhstan — analysis code & literature
 
+![Illustration of Helicobacter pylori on the gastric lining with immune cells and an island coast behind](assets/banner.webp)
+
+*Artwork reused from [Kaisar's research website](https://kays3.github.io/). AI-generated illustration, not a scientific result.*
+
 Reproducible analysis code and a curated literature base for the published study:
 
 > Dauyey K, Zhunussova G, Kaibullayeva J, Bondar Y, Yerzhan A, Medetbekova A,
