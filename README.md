@@ -142,3 +142,7 @@ Full statement, including data availability:
 
 Analysis code: K. Dauyey. Study: Institute of Genetics and Physiology
 (Almaty, Kazakhstan) in collaboration with Oita University (Japan).
+
+## Research website
+
+[Read the clinical and microbiology overview](https://kays3.github.io/research/#infectious-disease) and [view the broader research portfolio](https://kays3.github.io/). The website summaries link back to this repository and the published paper; project code and evidence remain documented here.
